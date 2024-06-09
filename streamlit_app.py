@@ -5,7 +5,7 @@ from sklearn.metrics import euclidean_distances as ed
 
 def main():
     st.title("Heart Failure Prediction")
-    image=Image.open("heart.jpg")
+    image=Image.open("heart_image.jpeg")
     st.image(image,width=500)
     age=st.text_input("Age","Type Here")
     gender=st.radio("Sex",['Male','Female'])
@@ -26,8 +26,8 @@ def main():
     thal = st.text_input("thal","Type Here")
     features=[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]
 
-    model=pickle.load(open('model.sav','rb'))
-    scaler=pickle.load(open('scaler.sav','rb'))
+    model=pickle.load(open('model(1).sav','rb'))
+    scaler=pickle.load(open('scaler(1).sav','rb'))
     pred=st.button('PREDICT')
 
     if pred:
