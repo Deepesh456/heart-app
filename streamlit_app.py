@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 from PIL import Image
-from sklearn.metrics import euclidean_distances as ed
 
 def main():
     st.title("Heart Failure Prediction")
@@ -26,8 +25,8 @@ def main():
     thal = st.text_input("thal","Type Here")
     features=[age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]
 
-    model=pickle.load(open('model(1).sav','rb'))
-    scaler=pickle.load(open('scaler(1).sav','rb'))
+    model=pickle.load(open('model (1).sav','rb'))
+    scaler=pickle.load(open('scaler (1).sav','rb'))
     pred=st.button('PREDICT')
 
     if pred:
@@ -36,3 +35,7 @@ def main():
             st.write("Not Suffering Heart Disease")
         else:
             st.write("Suffering Heart Disease")
+
+
+
+main()
